@@ -31,6 +31,9 @@ UFOdata.forEach(encounter => {
 //add cells to tr
     Object.entries(encounter).forEach(([key, value]) => {
         console.log(key, value)
+        // Use d3 to append 1 cell per value
+        var cell = row.append("td");
+        cell.text(value)
     }); 
 });
 
