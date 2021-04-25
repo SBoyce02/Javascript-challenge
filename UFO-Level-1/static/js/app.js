@@ -36,7 +36,24 @@ UFOdata.forEach(encounter => {
 
 
 // Use a date form in your HTML document and write JavaScript code that will listen for events and search through the date/time column to find rows that match user input.
+        //clacc activity 
 
-d3.select("#filter-btn")
+// Select the button
+var button = d3.select("#filter-btn")
 
-d3.event.preventDefault();
+
+// Select form
+var form = d3.select("#datetime")
+
+// Create event handlers for clicking the button or pressing the enter key and  prevent the page from refreshing
+
+form.on("Filter Table", () => {
+    d3.event.preventDefault();
+});
+
+
+button.on("click", () => {
+    d3.event.preventDefault();
+});
+
+
