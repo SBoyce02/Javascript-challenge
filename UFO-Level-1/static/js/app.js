@@ -1,7 +1,7 @@
 // from data.js
 var UFOdata = data;
 
-console.log(UFOdata)
+// console.log(UFOdata)
 
 // YOUR CODE HERE!
 
@@ -45,12 +45,11 @@ var button = d3.select("#filter-btn");
 // Select form
 var form = d3.select("form");
 
-//select input
-var input = d3.select("#datetime");
+
 
 // Create event handlers for clicking the button or pressing the enter key and  prevent the page from refreshing
 
-form.on("Filter Table", runEnter);
+form.on("#datetime", runEnter);
 
 button.on("click", runEnter);
 
@@ -62,8 +61,11 @@ function runEnter() {
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
+  //select input
+  var input = d3.select("#datetime");
+
   // Get the value property of the input element
-  var inputValue = input.property("value");}
+  var inputValue = input.property("value");
 
   // Print the value to the console
   console.log(inputValue);
@@ -71,22 +73,24 @@ function runEnter() {
 
   var filteredSighting = UFOdata.filter(date => date.datetime === inputValue)
 
+  console.log(filteredSighting);
+    }
 
+ // show filtered data in table on site
+
+  var table = d3.select("table");
+  table.html("<tbody></tbody>");
 
   //reference to table body
 
-var tbody = d3.select("tbody");
+  var tbody = d3.select("tbody");
 
-
-//loop through and log each data object
-
-
-//add blank table row
-filteredSighting.forEach(sighting => {
+  //add blank table row
+  filteredSighting.forEach(sighting => {
     console.log(sighting);
     var row = tbody.append("tr");
 
-//add cells to tr
+  //add cells to tr
     Object.entries(sighting).forEach(([key, value]) => {
         console.log(key, value)
         // Use d3 to append 1 cell per value
