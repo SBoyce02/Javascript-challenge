@@ -79,7 +79,7 @@ function runEnter() {
 
  // show filtered data in table on site
 
-  var table = d3.select("table");
+  var table = d3.select("tbody");
   table.html("<tbody></tbody>");
 
   //reference to table body
