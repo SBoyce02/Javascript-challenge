@@ -49,7 +49,7 @@ var form = d3.select("form");
 
 // Create event handlers for clicking the button or pressing the enter key and  prevent the page from refreshing
 
-form.on("#datetime", runEnter);
+form.on("submit", runEnter);
 
 button.on("click", runEnter);
 
