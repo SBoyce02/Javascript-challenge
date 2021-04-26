@@ -74,7 +74,8 @@ function runEnter() {
   var filteredSighting = UFOdata.filter(date => date.datetime === inputValue)
 
   console.log(filteredSighting);
-    }
+
+    
 
  // show filtered data in table on site
 
@@ -86,15 +87,16 @@ function runEnter() {
   var tbody = d3.select("tbody");
 
   //add blank table row
-  filteredSighting.forEach(sighting => {
+    filteredSighting.forEach(sighting => {
     console.log(sighting);
     var row = tbody.append("tr");
 
   //add cells to tr
     Object.entries(sighting).forEach(([key, value]) => {
-        console.log(key, value)
+        // console.log(key, value)
         // Use d3 to append 1 cell per value
         var cell = row.append("td");
         cell.text(value)
+         });          
     }); 
-});
+};
